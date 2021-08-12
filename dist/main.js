@@ -19,3 +19,12 @@ var user2 = {
     }
 };
 console.log(user.getMessage());
+var PopularTags = ['dragon', 'coffee'];
+var dragonsTag = "dragon";
+var username = "alex";
+// using a pipe to use it for data that can be either
+var pageName = "1";
+// using default values
+var errorMessage = null;
+// you can make unions with interfaces too
+var newUser = null;

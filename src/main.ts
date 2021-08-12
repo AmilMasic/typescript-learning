@@ -33,3 +33,27 @@ const user2: UserInterface = {
 };
 
 console.log(user.getMessage());
+
+// types and unions
+type ID = string;
+type PopularTag = string;
+type MaybePopularTag = PopularTag | null
+
+interface newUserInterface {
+  // we can declare custom types and use them everywhere in the file
+  id: ID;
+  name: string;
+  surname: string;
+}
+
+
+const PopularTags: PopularTag[] = ['dragon', 'coffee'];
+
+const dragonsTag: MaybePopularTag = "dragon";
+let username: string = "alex";
+// using a pipe to use it for data that can be either
+let pageName: string | number = "1";
+// using default values
+let errorMessage: string | null = null;
+// you can make unions with interfaces too
+let newUser: newUserInterface | null = null;

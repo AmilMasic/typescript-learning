@@ -4,4 +4,6 @@
 - types stay consistent, we can't assing string and later override it to boolean
 - learn more about interfaces
 - don't create too many interfaces
-- 
+- pipe operator in typescript?
+- unions
+- research more on type
