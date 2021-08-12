@@ -1,0 +1,4 @@
+- setup for ts files
+- history of ts
+- why ES3? Did this update yet?
+- 
