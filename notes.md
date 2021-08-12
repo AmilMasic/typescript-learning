@@ -2,3 +2,6 @@
 - history of ts
 - why ES3? Did this update yet?
 - types stay consistent, we can't assing string and later override it to boolean
+- learn more about interfaces
+- don't create too many interfaces
+- 
