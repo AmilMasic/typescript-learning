@@ -7,3 +7,6 @@
 - pipe operator in typescript?
 - unions
 - research more on type
+- read on datatypes for TypeScript
+- what is void
+- 

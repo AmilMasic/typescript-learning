@@ -57,3 +57,26 @@ let pageName: string | number = "1";
 let errorMessage: string | null = null;
 // you can make unions with interfaces too
 let newUser: newUserInterface | null = null;
+
+// data types in TypeScript
+// void - is just null or undefined
+const doSomething = (): void => {
+  console.log("doSomething");
+}
+// any - worst type in TypeScript
+// any is no solution, just a beginning of bigger problems
+let vAny: any = 10;
+// we can change this to anything we want.
+
+// never - gets never executed
+
+// unkown - introduced in TS3
+let vUnknown: unknown = 10;
+// the following code throws an error because of unknown doesn't allow this, if it was any it would have not thrown an error
+// uncomment the following line to see the error message
+// let s2: string = vUnknown;
+
+// the following code is super intersting
+// converting string to numbers with unknown
+let pageNumber: string = "1";
+let numericPageNumber: number = (pageNumber as unknown) as number;
