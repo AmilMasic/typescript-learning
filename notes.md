@@ -14,3 +14,6 @@
 - read more about static, readonly
 - read morea bout data types
 - figure out more about V, T interface types
+- enums in general
+- enums in TS
+- do they exist in JS

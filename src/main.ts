@@ -83,14 +83,14 @@ let pageNumber: string = "1";
 // typescript knows what document is, and querySelector is a method
 // it only sees the datatype, not the markup
 
-const someElement = document.querySelector(".foo") as HTMLInputElement;
-
-console.log("someElement", someElement.value);
-
-someElement.addEventListener('blur', (event) => {
-  const target = event.target as HTMLInputElement;
-  console.log("event", target.value);
-});
+// const someElement = document.querySelector(".foo") as HTMLInputElement;
+//
+// console.log("someElement", someElement.value);
+//
+// someElement.addEventListener('blur', (event) => {
+//   const target = event.target as HTMLInputElement;
+//   console.log("event", target.value);
+// });
 
 // classes in TS
 interface UserInterface {
@@ -167,3 +167,27 @@ const user5: GenericsUserInterface<string[]> = {
   name: "John",
   data: ["foo", "bar", "baz"],
 };
+
+// enums in TS
+// const statuses = {
+//   notStarted = 0,
+//   inProgress = 1,
+//   done = 2,
+// };
+//
+// console.log(statuses.inProgress)
+
+enum StatusEnum {
+  NotStarted = 'notStarted',
+  InProgress = 'inProgress',
+  Done = 'done',
+};
+
+// you can use enums in interfaces
+interface Task {
+  id: string;
+  status: StatusEnum;
+};
+// enums can be used as a type
+let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
+console.log(StatusEnum.InProgress);

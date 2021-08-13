@@ -58,14 +58,6 @@ var vUnknown = 10;
 // the following code is super intersting
 // converting string to numbers with unknown
 var pageNumber = "1";
-// typescript knows what document is, and querySelector is a method
-// it only sees the datatype, not the markup
-var someElement = document.querySelector(".foo");
-console.log("someElement", someElement.value);
-someElement.addEventListener('blur', function (event) {
-    var target = event.target;
-    console.log("event", target.value);
-});
 var User = /** @class */ (function () {
     function User(firstName, lastName) {
         this.firstName = firstName;
@@ -114,3 +106,22 @@ var user5 = {
     name: "John",
     data: ["foo", "bar", "baz"]
 };
+// enums in TS
+// const statuses = {
+//   notStarted = 0,
+//   inProgress = 1,
+//   done = 2,
+// };
+//
+// console.log(statuses.inProgress)
+var StatusEnum;
+(function (StatusEnum) {
+    StatusEnum["NotStarted"] = "notStarted";
+    StatusEnum["InProgress"] = "inProgress";
+    StatusEnum["Done"] = "done";
+})(StatusEnum || (StatusEnum = {}));
+;
+;
+// enums can be used as a type
+var notStartedStatus = StatusEnum.NotStarted;
+console.log(StatusEnum.InProgress);
