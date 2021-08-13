@@ -16,7 +16,7 @@ console.log(getFullName("amil", "masic"));
 //   age?: number;
 //   getMessage(): string;
 // }
-// 
+//
 // const user: UserInterface = {
 //   name: "Amil",
 //   age: 30,
@@ -129,3 +129,41 @@ class Admin extends User {
 }
 
 const admin = new Admin('foo', 'bar');
+
+// generics interfaces and functions
+// <T> is generic type
+
+
+const addId = <T extends object>(obj: T) => {
+  const id = Math.random().toString(16)
+  return {
+    ...obj,
+    id
+  }
+}
+
+const user3 = {
+  name: "Jack",
+};
+
+const result = addId(user3);
+
+console.log("result", result);
+
+// using genericsUserInterface
+interface GenericsUserInterface<T> {
+  name :string;
+  data: T;
+}
+
+const user4: GenericsUserInterface<{meta: string}> = {
+  name: "notJack",
+  data: {
+    meta: "foo",
+  },
+};
+
+const user5: GenericsUserInterface<string[]> = {
+  name: "John",
+  data: ["foo", "bar", "baz"],
+};

@@ -11,4 +11,6 @@
 - what is void
 - we need to define the types when working with the DOM, since TS doesn't have access to the markup.
 - typescript has private, we can use it to make properties invisible
-- read more about static, readonly 
+- read more about static, readonly
+- read morea bout data types
+- figure out more about V, T interface types
