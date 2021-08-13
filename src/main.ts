@@ -11,28 +11,28 @@ console.log(getFullName("amil", "masic"));
 // interface usage and setups
 // using ? makes a property non mandatory
 // ? has to be before the :
-interface UserInterface {
-  name: string;
-  age?: number;
-  getMessage(): string;
-}
-
-const user: UserInterface = {
-  name: "Amil",
-  age: 30,
-  getMessage(){
-    return "Hello" + name;
-  }
-}
-
-const user2: UserInterface = {
-  name: "Jack",
-  getMessage(){
-    return "Hello" + name;
-  }
-};
-
-console.log(user.getMessage());
+// interface UserInterface {
+//   name: string;
+//   age?: number;
+//   getMessage(): string;
+// }
+// 
+// const user: UserInterface = {
+//   name: "Amil",
+//   age: 30,
+//   getMessage(){
+//     return "Hello" + name;
+//   }
+// }
+//
+// const user2: UserInterface = {
+//   name: "Jack",
+//   getMessage(){
+//     return "Hello" + name;
+//   }
+// };
+//
+// console.log(user.getMessage());
 
 // types and unions
 type ID = string;
@@ -91,3 +91,41 @@ someElement.addEventListener('blur', (event) => {
   const target = event.target as HTMLInputElement;
   console.log("event", target.value);
 });
+
+// classes in TS
+interface UserInterface {
+  getFullName(): string;
+}
+class User implements UserInterface {
+  // using private so it doesn't show when looking for properties
+  // protected - to protect it from change
+  // readonly to make constants that are unchangable
+  private firstName: string
+  private lastName: string
+  static readonly maxAge = 50;
+
+  constructor(firstName: string, lastName: string){
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getFullName(): string {
+    return this.firstName + ' ' + this.lastName
+  }
+}
+
+const amil = new User("Amil", "Masic");
+console.log(amil.getFullName());
+
+class Admin extends User {
+  private editor: string
+
+  setEditor(editor: string): void {
+    this.editor = editor;
+  }
+
+  getEditor(): string {
+    return this.editor
+  }
+}
+
+const admin = new Admin('foo', 'bar');
