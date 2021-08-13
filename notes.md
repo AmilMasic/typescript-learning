@@ -9,4 +9,4 @@
 - research more on type
 - read on datatypes for TypeScript
 - what is void
-- 
+- we need to define the types when working with the DOM, since TS doesn't have access to the markup.

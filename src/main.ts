@@ -79,4 +79,15 @@ let vUnknown: unknown = 10;
 // the following code is super intersting
 // converting string to numbers with unknown
 let pageNumber: string = "1";
-let numericPageNumber: number = (pageNumber as unknown) as number;
+
+// typescript knows what document is, and querySelector is a method
+// it only sees the datatype, not the markup
+
+const someElement = document.querySelector(".foo") as HTMLInputElement;
+
+console.log("someElement", someElement.value);
+
+someElement.addEventListener('blur', (event) => {
+  const target = event.target as HTMLInputElement;
+  console.log("event", target.value);
+});
